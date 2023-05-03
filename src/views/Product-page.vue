@@ -2011,7 +2011,7 @@ $black: #192636;
             transform: translateY(-50%) translateX(-50%);
             background-repeat: no-repeat;
             background-size: contain;
-            background-image: url(../../../../public/images/view-swiper-arrow.svg);
+            background-image: url(../../public/images/view-swiper-arrow.svg);
         }
     }
 
@@ -2039,7 +2039,7 @@ $black: #192636;
             transform: translateY(-50%) translateX(-50%) rotate(180deg);
             background-repeat: no-repeat;
             background-size: contain;
-            background-image: url(../../../../public/images/view-swiper-arrow.svg);
+            background-image: url(../../public/images/view-swiper-arrow.svg);
         }
     }
 }

@@ -275,7 +275,7 @@ $black: #192636;
         padding: 10px 42px;
         border: 1px solid transparent;
         transition: color 0.3s, background 0.3s, border 0.3s;
-        max-width: 240px;
+        max-width: 245px;
 
         &:hover {
             background: transparent;

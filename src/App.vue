@@ -155,7 +155,7 @@ body {
     width: 16px;
     height: 16px;
     background-repeat: no-repeat;
-    background-image: url(../../../public/images/close-icon.svg);
+    background-image: url(../public/images/close-icon.svg);
   }
   svg {
     display: none !important;
@@ -183,4 +183,9 @@ body {
   margin-right: auto;
 }
 
+@media (max-width: 600px) {
+  .fancybox__slide {
+    padding: 15px;
+  }
+}
 </style>

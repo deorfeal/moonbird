@@ -2,7 +2,7 @@
     <div class="big-wrapper">
         <HeaderVue>
         </HeaderVue>
-        <main class="main">
+        <main class="main product-main">
             <section class="main__product-info product-info">
                 <div class="product-info__view product-view">
                     <div class="product-view__inner">
@@ -29,7 +29,7 @@
                         <swiper class="product-view__swiper product-view-swiper" :loop="true" :modules="modules"
                             :slides-per-view="5" :space-between="30" navigation @swiper="onSwiper"
                             @slideChange="onSlideChange"
-                            :breakpoints="{ 301: { slidesPerView: 1 }, 901: { slidesPerView: 5 } }">
+                            :breakpoints="{ 301: { slidesPerView: 3, spaceBetween: 15 }, 551: { slidesPerView: 4, spaceBetween: 15 }, 801: { slidesPerView: 2, spaceBetween: 30 },901: { slidesPerView: 3 }, 1201: { slidesPerView: 4 }, 1651: { slidesPerView: 5 } }">
                             <swiper-slide class="product-view-swiper__slide product-view-swiper-slide"
                                 data-filter=".item-first">
                                 <div class="product-view-swiper-slide__box">
@@ -112,7 +112,7 @@
                             Free delivery
                         </a>
                     </div>
-                    <div class="product-content__subscribe product-content-subscribe" >
+                    <div class="product-content__subscribe product-content-subscribe">
                         <p class="product-content-subscribe__text">
                             Starting at
                             <span>
@@ -124,7 +124,7 @@
                             <img src="../../public/images/alma-icon.png" alt="img">
                         </a>
                         <svg width="17" height="18" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg"
-                            @click="showAlmaInfo">
+                            @mouseover="showAlmaInfo" @mouseout="closeAlmaInfo">
                             <path
                                 d="M8.5 4.83333V9.83333M8.5 13.1667H8.50749M16 9C16 13.1421 12.6421 16.5 8.5 16.5C4.35786 16.5 1 13.1421 1 9C1 4.85786 4.35786 1.5 8.5 1.5C12.6421 1.5 16 4.85786 16 9Z"
                                 stroke="#192636" stroke-opacity="1" stroke-width="1.5" stroke-linecap="round"
@@ -317,11 +317,23 @@
                         <p class="product-color__text">
                             Colour:
                         </p>
-                        <div class="product-color__box">
-                            <input class="product-color__box-btn" type="radio">
-                            <input class="product-color__box-btn" type="radio">
-                            <input class="product-color__box-btn" type="radio">
-                            <input class="product-color__box-btn" type="radio">
+                        <div class="product-color__box product-color-box">
+                            <label class="container product-color-box__item">
+                                <input type="checkbox" checked="checked" class="product-color-box__item-input">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="container product-color-box__item">
+                                <input type="checkbox" class="product-color-box__item-input">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="container product-color-box__item">
+                                <input type="checkbox" class="product-color-box__item-input">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="container product-color-box__item">
+                                <input type="checkbox" class="product-color-box__item-input">
+                                <span class="checkmark"></span>
+                            </label>
                         </div>
                     </div>
                     <div class="product-content__quantity product-quantity">
@@ -1286,6 +1298,20 @@
                     ea rebum.
                 </p>
             </div>
+            <button class="main__message-btn message-btn" type="button">
+                <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_6_853)">
+                        <path
+                            d="M22.5 24.5C22.5 24.5 18.9645 23.1087 16.1047 21.995H4.07775C2.655 21.995 1.5 20.7695 1.5 19.2598V3.233C1.5 1.72475 2.655 0.5 4.07775 0.5H19.9215C21.345 0.5 22.4993 1.724 22.4993 3.23375V17.0368L22.5 24.5ZM19.3958 15.5135C19.3396 15.4414 19.2691 15.3818 19.1886 15.3383C19.1082 15.2949 19.0196 15.2687 18.9285 15.2613C18.8375 15.2539 18.7458 15.2655 18.6594 15.2953C18.5731 15.3252 18.4938 15.3727 18.4268 15.4347C18.4043 15.4543 16.1655 17.4455 11.9992 17.4455C7.88475 17.4455 5.6115 15.4685 5.571 15.4325C5.50386 15.3707 5.42464 15.3236 5.33835 15.294C5.25206 15.2644 5.16057 15.253 5.06966 15.2605C4.97875 15.2681 4.89038 15.2944 4.81015 15.3378C4.72992 15.3812 4.65955 15.4408 4.6035 15.5128C4.48344 15.6625 4.42474 15.8523 4.43925 16.0438C4.45193 16.2342 4.53731 16.4125 4.67775 16.5417C4.78425 16.6378 7.3305 18.9042 11.9992 18.9042C16.6687 18.9042 19.215 16.6378 19.3215 16.5417C19.4617 16.4124 19.5468 16.2341 19.5592 16.0438C19.5738 15.8527 19.5154 15.6632 19.3958 15.5135Z"
+                            fill="white" />
+                    </g>
+                    <defs>
+                        <clipPath id="clip0_6_853">
+                            <rect width="24" height="24" fill="white" transform="translate(0 0.5)" />
+                        </clipPath>
+                    </defs>
+                </svg>
+            </button>
         </main>
     </div>
 </template>
@@ -1339,11 +1365,10 @@ export default {
             }
         },
         showAlmaInfo() {
-            if (this.almaInfoIsActive == false) {
                 this.almaInfoIsActive = true
-            } else {
-                this.almaInfoIsActive = false
-            }
+        },
+        closeAlmaInfo() {
+            this.almaInfoIsActive = false
         }
     },
     mounted() {
@@ -1377,12 +1402,28 @@ export default {
                 }
             }
         });
+        $('.product-color-box__item').on('click', function (event) {
+            for (let item of document.querySelectorAll('.product-color-box__item')) {
+                if (item.classList) {
+                    item.classList.remove('product-color-box__item--active')
+                }
+            }
+            this.classList.add('product-color-box__item--active')
+            for (let item of document.querySelectorAll('.product-color-box__item-input')) {
+                item.checked = false
+                if (item.parentNode.classList.contains('product-color-box__item--active')) {
+                    item.checked = true
+                }
+            }
+        });
     },
 };
 </script>
 
 <style lang="scss">
 $black: #192636;
+
+@import '../assets/scss/vars';
 
 .product-info {
     display: flex;
@@ -1428,16 +1469,16 @@ $black: #192636;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        gap: 20px;
+        @include adaptiv-phone-value('gap', 20, 10, 1);
         margin-bottom: 10px;
     }
 
     &__top-title {
         font-weight: 300;
         color: $black;
-        font-size: 36px;
-        line-height: 49px;
         text-transform: lowercase;
+        @include adaptiv-phone-value('font-size', 36, 28, 1);
+        @include adaptiv-phone-value('line-height', 49, 38, 1);
     }
 
     &__top-link {
@@ -1455,17 +1496,17 @@ $black: #192636;
     }
 
     &__text {
-        margin-bottom: 35px;
         font-weight: 300;
-        font-size: 16px;
-        line-height: 24px;
+        @include adaptiv-phone-value('margin-bottom', 35, 20, 1);
+        @include adaptiv-phone-value('font-size', 16, 14, 1);
+        @include adaptiv-phone-value('line-height', 24, 24, 1);
         color: $black;
     }
 
     &__price {
-        font-size: 32px;
-        line-height: 44px;
-        margin-bottom: 35px;
+        @include adaptiv-phone-value('margin-bottom', 35, 20, 1);
+        @include adaptiv-phone-value('font-size', 32, 26, 1);
+        @include adaptiv-phone-value('line-height', 44, 36, 1);
         color: $black;
     }
 
@@ -1475,19 +1516,22 @@ $black: #192636;
 }
 
 .product-content-subscribe {
-    margin-bottom: 30px;
+    @include adaptiv-phone-value('margin-bottom', 30, 20, 1);
     display: flex;
     align-items: center;
     gap: 10px;
     position: relative;
+
     svg {
         &:nth-last-child(2) {
             cursor: pointer;
         }
+
         &:nth-last-child(1) {
             cursor: pointer;
         }
     }
+
     &__text {
         font-size: 16px;
         line-height: 22px;
@@ -1568,7 +1612,7 @@ $black: #192636;
                 background-repeat: no-repeat;
                 background-size: 7px 7px;
                 background-position: center center;
-                background-image: url(../../../../public/images/tick-icon.svg);
+                background-image: url(../../public/images/tick-icon.svg);
             }
         }
     }
@@ -1651,11 +1695,100 @@ $black: #192636;
 }
 
 .product-color {
-    margin-bottom: 15px;
+    margin-bottom: 25px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 30px;
+
+    /* Customize the label (the container) */
+    .container {
+        display: block;
+        position: relative;
+
+        margin-bottom: 12px;
+        cursor: pointer;
+        font-size: 22px;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+
+        &:nth-child(2) {
+            .checkmark {
+                background: #B4EBFF
+            }
+        }
+
+        &:nth-child(3) {
+            .checkmark {
+                background: #F8F5E5
+            }
+        }
+
+        &:nth-child(4) {
+            .checkmark {
+                background: #343434
+            }
+        }
+    }
+
+    /* Hide the browser's default checkbox */
+    .container input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+    }
+
+    /* Create a custom checkbox */
+    .checkmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-radius: 100%;
+        height: 24px;
+        width: 24px;
+        background-color: #396B77;
+        z-index: 2;
+    }
+
+    /* On mouse-over, add a grey background color */
+    // .container:hover input~.checkmark {
+    //   background-color: #ccc;
+    // }
+
+    /* When the checkbox is checked, add a blue background */
+    .container input:checked~.checkmark {
+        // background-color: #2196F3;
+    }
+
+    /* Create the checkmark/indicator (hidden when not checked) */
+    .checkmark:after {
+        content: "";
+        position: absolute;
+        display: none;
+    }
+
+    /* Show the checkmark when checked */
+    .container input:checked~.checkmark:after {
+        display: block;
+    }
+
+    /* Style the checkmark/indicator */
+    .container .checkmark:after {
+        position: absolute;
+        left: -4px;
+        top: -4px;
+        width: 32px;
+        height: 32px;
+        border: 1px solid #CCCCCC;
+        background: transparent;
+        border-radius: 100%;
+        z-index: 1;
+    }
+
 
     &__text {
         font-size: 14px;
@@ -1684,7 +1817,7 @@ $black: #192636;
     align-items: center;
     justify-content: space-between;
     gap: 30px;
-    margin-right: 15px;
+    margin-right: 0;
 
     &__text {
         font-size: 14px;
@@ -1734,7 +1867,7 @@ $black: #192636;
         border-radius: 64px;
         padding: 10px 0;
         width: 100%;
-        margin-bottom: 25px;
+        @include adaptiv-phone-value('margin-bottom', 25, 10, 1);
         border: 1px solid transparent;
         transition: color 0.3s, background 0.3s, border 0.3s;
 
@@ -1788,8 +1921,8 @@ $black: #192636;
     }
 
     &__top-text {
-        font-size: 16px;
-        line-height: 22px;
+        @include adaptiv-phone-value('font-size', 16, 14, 1);
+        @include adaptiv-phone-value('line-height', 22, 19, 1);
         color: $black;
     }
 
@@ -1802,7 +1935,7 @@ $black: #192636;
 .product-faq-item-get {
     display: none;
     padding-top: 22px;
-    gap: 30px;
+    @include adaptiv-phone-value('gap', 30, 15, 1);
 
     &__img {
         width: 148px;
@@ -1846,19 +1979,21 @@ $black: #192636;
 }
 
 .moonbird-advantages {
-    padding-bottom: 100px;
-    padding-top: 100px;
+    @include adaptiv-phone-value('padding-bottom', 100, 30, 1);
+    @include adaptiv-phone-value('padding-top', 100, 30, 1);
     max-width: 1150px;
     margin-left: auto;
     margin-right: auto;
 
     &__title {
-        margin-bottom: 55px;
-        font-size: 36px;
-        line-height: 49px;
+        margin-left: 15px;
+        margin-right: 15px;
         color: $black;
         text-align: center;
         font-weight: 300;
+        @include adaptiv-phone-value('margin-bottom', 55, 20, 1);
+        @include adaptiv-phone-value('font-size', 36, 24, 1);
+        @include adaptiv-phone-value('line-height', 49, 33, 1);
 
         span {
             font-weight: 500;
@@ -1873,28 +2008,32 @@ $black: #192636;
     border-collapse: collapse;
 
     p {
+        text-align: left;
         gap: 10px;
         display: flex;
         align-items: center;
-        font-size: 16px;
-        line-height: 22px;
+        @include adaptiv-phone-value('font-size', 16, 14, 1);
+        @include adaptiv-phone-value('line-height', 22, 19, 1);
         color: $black;
 
         span {
             background: rgba(25, 38, 54, 0.05);
             border-radius: 34px;
-            width: 29px;
-            height: 29px;
+            @include adaptiv-phone-value('width', 29, 19, 1);
+            @include adaptiv-phone-value('height', 29, 19, 1);
             display: flex;
             justify-content: center;
             align-items: center;
+            svg {
+                @include adaptiv-phone-value('width', 16, 11, 1);
+                @include adaptiv-phone-value('height', 16, 11, 1);
+            }
         }
     }
 
     tr {
         &:first-child {
-            width: 385px;
-
+            @include adaptiv-phone-value('width', 385, 125, 1);
             th {
                 &:last-child {
                     border-radius: 18px 18px 0px 0px;
@@ -1905,8 +2044,8 @@ $black: #192636;
         &:last-child {
             td {
                 font-weight: 600;
-                font-size: 16px;
-                line-height: 22px;
+                @include adaptiv-phone-value('font-size', 16, 14, 1);
+                @include adaptiv-phone-value('line-height', 22, 19, 1);
                 color: $black;
                 border: unset;
 
@@ -1922,10 +2061,10 @@ $black: #192636;
     }
 
     th {
-        padding: 16.5px;
+        @include adaptiv-phone-value('padding', 16.5, 10, 1);
         font-weight: 500;
-        font-size: 16px;
-        line-height: 22px;
+        @include adaptiv-phone-value('font-size', 16, 14, 1);
+        @include adaptiv-phone-value('line-height', 22, 19, 1);
         color: $black;
 
         &:last-child {
@@ -1937,10 +2076,10 @@ $black: #192636;
     td {
         border-bottom: 1px solid #E0E0E0;
         text-align: center;
-        padding: 16.5px;
+        @include adaptiv-phone-value('padding', 16.5, 10, 1);
 
         &:first-child {
-            width: 385px;
+            @include adaptiv-phone-value('width', 385, 125, 1);
         }
 
         &:last-child {
@@ -1971,6 +2110,7 @@ $black: #192636;
         max-height: 890px;
         width: 100%;
         height: 890px;
+        object-fit: cover;
     }
 }
 
@@ -1996,10 +2136,10 @@ $black: #192636;
         align-items: center;
         border-radius: 100%;
         position: absolute;
-        bottom: 210px !important;
-        right: 80px !important;
-        top: unset !important;
-        left: unset !important;
+        bottom: 210px ;
+        right: 80px ;
+        top: unset ;
+        left: unset ;
 
         &::before {
             content: '';
@@ -2024,10 +2164,10 @@ $black: #192636;
         align-items: center;
         border-radius: 100%;
         position: absolute;
-        bottom: 210px !important;
-        right: 20px !important;
-        top: unset !important;
-        left: unset !important;
+        bottom: 210px ;
+        right: 20px;
+        top: unset ;
+        left: unset ;
 
         &::before {
             content: '';
@@ -2063,36 +2203,35 @@ $black: #192636;
 
 
 .payment-popup {
-    padding: 42px;
+    @include adaptiv-phone-value('padding', 42, 15, 1);
     max-width: 580px;
     background: #FFFFFF;
     border-radius: 11px;
     display: none;
 
     &__img {
-        margin-bottom: 15px;
-        width: 59px;
-        height: 32px;
         margin-left: auto;
         margin-right: auto;
+        @include adaptiv-phone-value('margin-bottom', 15, 10, 1);
+        @include adaptiv-phone-value('width', 59, 39, 1);
+        @include adaptiv-phone-value('height', 32, 21, 1);
     }
 
     &__img-image {
-        max-width: 59px;
-        max-height: 32px;
+        width: 100%;
+        height: 100%;
     }
 
     &__title {
-        margin-bottom: 20px;
         font-weight: 300;
-        font-size: 30px;
-        line-height: 41px;
-        max-width: 410px;
         text-align: center;
         margin-left: auto;
         color: $black;
         margin-right: auto;
-
+        @include adaptiv-phone-value('max-width', 410, 300, 1);
+        @include adaptiv-phone-value('margin-bottom', 20, 15, 1);
+        @include adaptiv-phone-value('font-size', 30, 22, 1);
+        @include adaptiv-phone-value('line-height', 41, 30, 1);
         span {
             font-weight: 500;
         }
@@ -2100,10 +2239,10 @@ $black: #192636;
 
     &__text {
         font-weight: 300;
-        font-size: 16px;
-        line-height: 24px;
         text-align: center;
-        margin-bottom: 30px;
+        @include adaptiv-phone-value('margin-bottom', 30, 25, 1);
+        @include adaptiv-phone-value('font-size', 16, 14, 1);
+        @include adaptiv-phone-value('line-height', 24, 24, 1);
         color: $black;
     }
 
@@ -2112,14 +2251,14 @@ $black: #192636;
         justify-content: center;
         align-items: center;
         text-align: center;
-        font-size: 16px;
-        line-height: 22px;
+        @include adaptiv-phone-value('font-size', 16, 14, 1);
+        @include adaptiv-phone-value('line-height', 22, 19, 1);
         color: #FFFFFF;
         background: #004FFF;
         border-radius: 64px;
         padding: 12px 0;
         width: 100%;
-        margin-bottom: 20px;
+        @include adaptiv-phone-value('margin-bottom', 20, 15, 1);
         border: 1px solid transparent;
         transition: color 0.3s, background 0.3s, border 0.3s;
 
@@ -2132,20 +2271,21 @@ $black: #192636;
 
     &__subtext {
         font-weight: 300;
-        font-size: 14px;
-        line-height: 24px;
-        padding-bottom: 20px;
         text-align: center;
         border-bottom: 1px solid rgba(25, 38, 54, 0.19);
         color: $black;
-        margin-bottom: 20px;
+        @include adaptiv-phone-value('padding-bottom', 20, 15, 1);
+        @include adaptiv-phone-value('margin-bottom', 20, 15, 1);
+        @include adaptiv-phone-value('font-size', 14, 12, 1);
+        @include adaptiv-phone-value('line-height', 24, 24, 1);
     }
 
     &__info {
         font-weight: 300;
-        font-size: 14px;
         text-align: center;
-        line-height: 24px;
+        @include adaptiv-phone-value('font-size', 14, 12, 1);
+        @include adaptiv-phone-value('line-height', 24, 24, 1);
+
         a {
             font-weight: 500;
             color: #004FFF;
@@ -2154,10 +2294,9 @@ $black: #192636;
 }
 
 .payment-popup-box {
-    margin-bottom: 30px;
     border: 1px solid rgba(25, 38, 54, 0.19);
     border-radius: 10px;
-
+    @include adaptiv-phone-value('margin-bottom', 30, 25, 1);
     &__top {
         border-bottom: 1px solid rgba(25, 38, 54, 0.19);
         display: flex;
@@ -2169,20 +2308,19 @@ $black: #192636;
     &__top-text {
         color: $black;
         font-weight: 500;
-        font-size: 20px;
-        line-height: 27px;
-
+        @include adaptiv-phone-value('font-size', 20, 18, 1);
+        @include adaptiv-phone-value('line-height', 27, 25, 1);
         span {
             font-weight: 400;
-            font-size: 14px;
-            line-height: 19px;
+            @include adaptiv-phone-value('font-size', 14, 12, 1);
+            @include adaptiv-phone-value('line-height', 19, 16, 1);
         }
     }
 
     &__top-time {
         font-weight: 500;
-        font-size: 16px;
-        line-height: 22px;
+        @include adaptiv-phone-value('font-size', 16, 14, 1);
+        @include adaptiv-phone-value('line-height', 22, 19, 1);
         display: flex;
         align-items: center;
         text-align: center;
@@ -2190,6 +2328,10 @@ $black: #192636;
         display: flex;
         align-items: center;
         gap: 8px;
+        svg {
+            @include adaptiv-phone-value('width', 16, 14, 1);
+            @include adaptiv-phone-value('height', 16, 14, 1);
+        }
     }
 }
 
@@ -2197,7 +2339,7 @@ $black: #192636;
     display: flex;
     padding: 20px;
     align-items: center;
-    gap: 100px;
+    @include adaptiv-phone-value('gap', 100, 75, 1);
 
     &__box {
         display: flex;
@@ -2227,6 +2369,152 @@ $black: #192636;
         font-weight: 300;
         font-size: 14px;
         line-height: 19px;
+    }
+}
+
+.message-btn {
+    position: fixed;
+    z-index: 10;
+    right: 20px;
+    bottom: 20px;
+    width: 48px;
+    height: 48px;
+    background: #004FFF;
+    box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.06), 0px 2px 32px rgba(0, 0, 0, 0.16);
+    border-radius: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width: 1800px) {
+    .product-view {
+        max-width: 50%;
+    }
+
+    .product-info {
+        justify-content: space-between;
+        gap: 0;
+    }
+
+    .product-content {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .product-view-swiper-slide__box {
+        max-width: 100%;
+        width: 100%;
+        @include adaptiv-phone-value('height', 160, 110, 1)
+    }
+}
+
+@media (max-width: 1400px) {
+    .product-info {
+        gap: 20px;
+    }
+
+    .product-info {
+        padding-right: 20px;
+    }
+
+    .product-content {
+        max-width: 50%;
+    }
+}
+
+@media (max-width: 800px) {
+    .product-info {
+        flex-direction: column;
+        padding-right: 0;
+    }
+
+    .product-view {
+        max-width: 100%;
+    }
+
+    .product-content {
+        max-width: 100%;
+    }
+
+   
+    .product-content {
+        margin-top: 0;
+        max-height: unset;
+    }
+
+
+    // 
+
+    .product-view__images-img {
+        @include adaptiv-phone-value('height', 890, 585, 1)
+    }
+    .product-view__images {
+        margin-bottom: 15px;
+    }
+
+    .product-view-swiper-slide__box {
+        max-width: 100%;
+        width: 100%;
+        @include adaptiv-phone-value('height', 160, 110, 1)
+    }
+
+    .product-view-swiper .swiper-button-prev {
+        top: 40%;
+        left: 15px;
+    }
+
+    .product-view-swiper .swiper-button-next {
+        top: 40%;
+        right: 15px;
+    }
+
+    .product-info {
+        gap: 30px;
+    }
+
+    // 
+
+    .product-content {
+        padding: 0 15px;
+    }
+}
+@media (max-width: 600px) {
+    .moonbird-advantages-table p {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+    .moonbird-advantages-table tr:first-child th:last-child {
+        border-radius: 10px 10px 0px 0px;
+    }
+    .moonbird-advantages-table tr:last-child td:last-child {
+        border-radius: 0 0 10px 10px;
+    }
+}
+@media (max-width: 550px) {
+    .message-btn {
+        display: none;
+    }
+    // .product-view-swiper-slide__box {
+    //    max-width: unset;
+    //    width: 100%;
+    // }
+    .product-faq-item-get {
+        flex-direction: column;
+    }
+    .product-faq-item-get__img {
+        max-width: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+    .payment-popup {
+        padding: 30px 15px;
+    }
+    .product-content-subscribe__list {
+        left: 30px;
+    } 
+    .product-content-subscribe__list::after {
+        left: 215px;
     }
 }
 </style>

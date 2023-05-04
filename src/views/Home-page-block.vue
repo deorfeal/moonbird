@@ -8,7 +8,7 @@
                         hand and simply breathe along
                     </h2>
                     <p class="about-moonbird-body__text">
-                        Slow breathing is the easiest way to relieve stress, ease anxiety, <br> 
+                        Slow breathing is the easiest way to relieve stress, ease anxiety, <br>
                         or combat insomnia. Moonbird
                         makes it intuitive and easy to do breathing exercises.
                     </p>
@@ -146,12 +146,78 @@
                     </a>
                 </div>
                 <div class="about-moonbird__info about-moonbird-info">
-                    <div class="about-moonbird-info__img">
-                        <img class="about-moonbird-info__img-image" src="../../public/images/about-moonbird-img.png" alt="">
-                    </div>
+                    <swiper class="about-moonbird-info__swiper about-moonbird-info-swiper" effect="fade" :space-between="50" :loop="true" :modules="modules"
+                        :slides-per-view="1" :autoplay="{ deelay: 1000 }" @swiper="onSwiper" @slideChange="onSlideChange">
+                        <swiper-slide class="about-moonbird-info-swiper__slide about-moonbird-info-swiper-slide">
+                            <div class="about-moonbird-info-swiper-slide__box">
+                                <img class="about-moonbird-info-swiper-slide__box-img"
+                                    src="../../public/images/about-moonbird-info-swiper-img-1.png" alt="img">
+                            </div>
+                        </swiper-slide>
+                        <swiper-slide class="about-moonbird-info-swiper__slide about-moonbird-info-swiper-slide">
+                            <div class="about-moonbird-info-swiper-slide__box">
+                                <img class="about-moonbird-info-swiper-slide__box-img"
+                                    src="../../public/images/about-moonbird-info-swiper-img-2.png" alt="img">
+                            </div>
+                        </swiper-slide>
+                        <swiper-slide class="about-moonbird-info-swiper__slide about-moonbird-info-swiper-slide">
+                            <div class="about-moonbird-info-swiper-slide__box">
+                                <img class="about-moonbird-info-swiper-slide__box-img"
+                                    src="../../public/images/about-moonbird-info-swiper-img-3.png" alt="img">
+                            </div>
+                        </swiper-slide>
+                        <swiper-slide class="about-moonbird-info-swiper__slide about-moonbird-info-swiper-slide">
+                            <div class="about-moonbird-info-swiper-slide__box">
+                                <img class="about-moonbird-info-swiper-slide__box-img"
+                                    src="../../public/images/about-moonbird-info-swiper-img-4.png" alt="img">
+                            </div>
+                        </swiper-slide>
+                        <swiper-slide class="about-moonbird-info-swiper__slide about-moonbird-info-swiper-slide">
+                            <div class="about-moonbird-info-swiper-slide__box">
+                                <img class="about-moonbird-info-swiper-slide__box-img"
+                                    src="../../public/images/about-moonbird-info-swiper-img-5.png" alt="img">
+                            </div>
+                        </swiper-slide>
+                        <swiper-slide class="about-moonbird-info-swiper__slide about-moonbird-info-swiper-slide">
+                            <div class="about-moonbird-info-swiper-slide__box">
+                                <img class="about-moonbird-info-swiper-slide__box-img"
+                                    src="../../public/images/about-moonbird-info-swiper-img-6.png" alt="img">
+                            </div>
+                        </swiper-slide>
+                        <swiper-slide class="about-moonbird-info-swiper__slide about-moonbird-info-swiper-slide">
+                            <div class="about-moonbird-info-swiper-slide__box">
+                                <img class="about-moonbird-info-swiper-slide__box-img"
+                                    src="../../public/images/about-moonbird-info-swiper-img-7.png" alt="img">
+                            </div>
+                        </swiper-slide>
+                        <swiper-slide class="about-moonbird-info-swiper__slide about-moonbird-info-swiper-slide">
+                            <div class="about-moonbird-info-swiper-slide__box">
+                                <img class="about-moonbird-info-swiper-slide__box-img"
+                                    src="../../public/images/about-moonbird-info-swiper-img-8.png" alt="img">
+                            </div>
+                        </swiper-slide>
+                        <swiper-slide class="about-moonbird-info-swiper__slide about-moonbird-info-swiper-slide">
+                            <div class="about-moonbird-info-swiper-slide__box">
+                                <img class="about-moonbird-info-swiper-slide__box-img"
+                                    src="../../public/images/about-moonbird-info-swiper-img-9.png" alt="img">
+                            </div>
+                        </swiper-slide>
+                        <swiper-slide class="about-moonbird-info-swiper__slide about-moonbird-info-swiper-slide">
+                            <div class="about-moonbird-info-swiper-slide__box">
+                                <img class="about-moonbird-info-swiper-slide__box-img"
+                                    src="../../public/images/about-moonbird-info-swiper-img-10.png" alt="img">
+                            </div>
+                        </swiper-slide>
+                        <swiper-slide class="about-moonbird-info-swiper__slide about-moonbird-info-swiper-slide">
+                            <div class="about-moonbird-info-swiper-slide__box">
+                                <img class="about-moonbird-info-swiper-slide__box-img"
+                                    src="../../public/images/about-moonbird-info-swiper-img-11.png" alt="img">
+                            </div>
+                        </swiper-slide>
+                    </swiper>
                     <div class="about-moonbird-info__inner">
                         <p class="about-moonbird-info__count">
-                            5,005,040+
+                            {{ minutesOfBreathing }}
                         </p>
                         <p class="about-moonbird-info__box-text">
                             minutes of slow breathing
@@ -177,20 +243,57 @@
 </template>
 
 <script>
-export default {
+import { Navigation, Autoplay, EffectFade } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/vue';
 
+import 'swiper/css';
+import 'swiper/css/autoplay';
+import 'swiper/css/effect-fade';
+
+export default {
+    components: {
+        Swiper,
+        SwiperSlide,
+    },
+    setup() {
+        const onSwiper = (swiper) => {
+        };
+        const onSlideChange = () => {
+        };
+        return {
+            onSwiper,
+            onSlideChange,
+            modules: [Navigation, Autoplay, EffectFade],
+        };
+    },
+    data() {
+        return {
+            minutesOfBreathing: '5,005,040+'
+        }
+    },
+    mounted() {
+        let currentMinutesOfBreathing = 5005040
+        setInterval(()=>{
+            let resultOfcurrentMinutesOfBreathing = currentMinutesOfBreathing += 105 
+            const formattedNumber = Number(resultOfcurrentMinutesOfBreathing).toLocaleString('en-US').replace(/,/g, ',') + "+";
+            this.minutesOfBreathing = formattedNumber
+        }, 1000)
+    }
 }
 </script>
 
 <style lang="scss">
 $black: #192636;
-
+@import '../assets/scss/vars';
 .big-wrapper--colored {
     background: #EBE6DC;
 }
 
 .about-moonbird {
-    padding: 185px 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    @include adaptiv-value('padding-top', 185, 45, 1);
+    @include adaptiv-value('padding-bottom', 185, 75, 1);
     max-width: 1275px;
     margin-left: auto;
     margin-right: auto;
@@ -223,7 +326,7 @@ $black: #192636;
         line-height: 24px;
         max-width: 620px;
         color: $black;
-        margin-bottom: 30px;
+        @include adaptiv-value('margin-bottom', 30, 25, 1);
     }
 
     &__inner {
@@ -287,17 +390,6 @@ $black: #192636;
 
 .about-moonbird-info {
     margin-bottom: -30px;
-    &__img {
-        filter: drop-shadow(0px 8px 32px rgba(0, 0, 0, 0.05));
-        transform: rotate(-1.89deg);
-        width: 320px;
-        height: 375px;
-    }
-
-    &__img-image {
-        width: 100%;
-        height: 100%;
-    }
 
     &__inner {
         display: flex;
@@ -332,4 +424,53 @@ $black: #192636;
         padding: 8px;
     }
 }
+
+
+.about-moonbird-info-swiper {
+    width: 320px;
+    filter: drop-shadow(0px 8px 32px rgba(0, 0, 0, 0.05));
+    transform: rotate(-1.89deg);
+    width: 320px;
+    height: 375px;
+}
+
+.about-moonbird-info-swiper-slide {
+
+    &__box {
+    }
+
+    &__box-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+@media (max-width: 900px) {
+    .about-moonbird__inner {
+        flex-direction: column;
+    }
+    .about-moonbird-body__link {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+@media (max-width: 650px) {
+    .about-moonbird-body__inner {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 550px) {
+    .about-moonbird-body__text {
+        br {
+            display: none;
+        }
+    }
+    .about-moonbird-body__link {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
 </style>

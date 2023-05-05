@@ -1,5 +1,6 @@
 <template>
     <div class="big-wrapper big-wrapper--colored">
+        <Header :headerIsFull="true"></Header>
         <section class="about-moonbird">
             <div class="about-moonbird__inner">
                 <div class="about-moonbird__body about-moonbird-body">
@@ -243,6 +244,7 @@
 </template>
 
 <script>
+import Header from './Header.vue';
 import { Navigation, Autoplay, EffectFade } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/vue';
 
@@ -254,6 +256,7 @@ export default {
     components: {
         Swiper,
         SwiperSlide,
+        Header
     },
     setup() {
         const onSwiper = (swiper) => {

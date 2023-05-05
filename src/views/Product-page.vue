@@ -1,7 +1,7 @@
 <template>
     <div class="big-wrapper">
-        <HeaderVue>
-        </HeaderVue>
+        <Header :headerIsFull="false">
+        </Header>
         <main class="main product-main">
             <section class="main__product-info product-info">
                 <div class="product-info__view product-view">
@@ -17,6 +17,12 @@
                                 src="../../public/images/product-img-4.png" alt="img">
                             <img class="product-view__images-img mix item-fifth" src="../../public/images/product-img-5.png"
                                 alt="img">
+                            <img class="product-view__images-img product-view__images-img--colored mix item-sixth" src="../../public/images/product-img-6.png"
+                                alt="img">
+                            <img class="product-view__images-img product-view__images-img--colored mix item-seventh" src="../../public/images/product-img-7.png"
+                                alt="img">
+                            <img class="product-view__images-img product-view__images-img--colored mix item-eight" src="../../public/images/product-img-8.png"
+                                alt="img">
                             <!-- <div class="product-view__images-box">
                                 <div class="swiper-button-prev">
     
@@ -29,7 +35,7 @@
                         <swiper class="product-view__swiper product-view-swiper" :loop="true" :modules="modules"
                             :slides-per-view="5" :space-between="30" navigation @swiper="onSwiper"
                             @slideChange="onSlideChange"
-                            :breakpoints="{ 301: { slidesPerView: 3, spaceBetween: 15 }, 551: { slidesPerView: 4, spaceBetween: 15 }, 801: { slidesPerView: 2, spaceBetween: 30 },901: { slidesPerView: 3 }, 1201: { slidesPerView: 4 }, 1651: { slidesPerView: 5 } }">
+                            :breakpoints="{ 301: { slidesPerView: 3, spaceBetween: 15 }, 551: { slidesPerView: 4, spaceBetween: 15 }, 801: { slidesPerView: 2, spaceBetween: 30 }, 901: { slidesPerView: 3 }, 1201: { slidesPerView: 4 }, 1651: { slidesPerView: 5 } }">
                             <swiper-slide class="product-view-swiper__slide product-view-swiper-slide"
                                 data-filter=".item-first">
                                 <div class="product-view-swiper-slide__box">
@@ -318,19 +324,19 @@
                             Colour:
                         </p>
                         <div class="product-color__box product-color-box">
-                            <label class="container product-color-box__item">
+                            <label class="container product-color-box__item" data-filter=".item-first">
                                 <input type="checkbox" checked="checked" class="product-color-box__item-input">
                                 <span class="checkmark"></span>
                             </label>
-                            <label class="container product-color-box__item">
+                            <label class="container product-color-box__item" data-filter=".item-sixth">
                                 <input type="checkbox" class="product-color-box__item-input">
                                 <span class="checkmark"></span>
                             </label>
-                            <label class="container product-color-box__item">
+                            <label class="container product-color-box__item" data-filter=".item-seventh">
                                 <input type="checkbox" class="product-color-box__item-input">
                                 <span class="checkmark"></span>
                             </label>
-                            <label class="container product-color-box__item">
+                            <label class="container product-color-box__item" data-filter=".item-eight">
                                 <input type="checkbox" class="product-color-box__item-input">
                                 <span class="checkmark"></span>
                             </label>
@@ -1324,13 +1330,13 @@ import { Swiper, SwiperSlide } from 'swiper/vue';
 import 'swiper/css';
 import 'swiper/css/navigation';
 
-import HeaderVue from './Header.vue';
+import Header from './Header.vue';
 
 export default {
     components: {
         Swiper,
         SwiperSlide,
-        HeaderVue
+        Header
     },
     setup() {
         const onSwiper = (swiper) => {
@@ -1365,7 +1371,7 @@ export default {
             }
         },
         showAlmaInfo() {
-                this.almaInfoIsActive = true
+            this.almaInfoIsActive = true
         },
         closeAlmaInfo() {
             this.almaInfoIsActive = false
@@ -2024,6 +2030,7 @@ $black: #192636;
             display: flex;
             justify-content: center;
             align-items: center;
+
             svg {
                 @include adaptiv-phone-value('width', 16, 11, 1);
                 @include adaptiv-phone-value('height', 16, 11, 1);
@@ -2034,6 +2041,7 @@ $black: #192636;
     tr {
         &:first-child {
             @include adaptiv-phone-value('width', 385, 125, 1);
+
             th {
                 &:last-child {
                     border-radius: 18px 18px 0px 0px;
@@ -2105,6 +2113,11 @@ $black: #192636;
         margin-bottom: 30px;
     }
 
+    &__images-img--colored {
+        width: 960px;
+        height: 890px;
+    }
+
     &__images-img {
         max-width: 960px;
         max-height: 890px;
@@ -2136,10 +2149,10 @@ $black: #192636;
         align-items: center;
         border-radius: 100%;
         position: absolute;
-        bottom: 210px ;
-        right: 80px ;
-        top: unset ;
-        left: unset ;
+        bottom: 210px;
+        right: 80px;
+        top: unset;
+        left: unset;
 
         &::before {
             content: '';
@@ -2164,10 +2177,10 @@ $black: #192636;
         align-items: center;
         border-radius: 100%;
         position: absolute;
-        bottom: 210px ;
+        bottom: 210px;
         right: 20px;
-        top: unset ;
-        left: unset ;
+        top: unset;
+        left: unset;
 
         &::before {
             content: '';
@@ -2232,6 +2245,7 @@ $black: #192636;
         @include adaptiv-phone-value('margin-bottom', 20, 15, 1);
         @include adaptiv-phone-value('font-size', 30, 22, 1);
         @include adaptiv-phone-value('line-height', 41, 30, 1);
+
         span {
             font-weight: 500;
         }
@@ -2297,6 +2311,7 @@ $black: #192636;
     border: 1px solid rgba(25, 38, 54, 0.19);
     border-radius: 10px;
     @include adaptiv-phone-value('margin-bottom', 30, 25, 1);
+
     &__top {
         border-bottom: 1px solid rgba(25, 38, 54, 0.19);
         display: flex;
@@ -2310,6 +2325,7 @@ $black: #192636;
         font-weight: 500;
         @include adaptiv-phone-value('font-size', 20, 18, 1);
         @include adaptiv-phone-value('line-height', 27, 25, 1);
+
         span {
             font-weight: 400;
             @include adaptiv-phone-value('font-size', 14, 12, 1);
@@ -2328,6 +2344,7 @@ $black: #192636;
         display: flex;
         align-items: center;
         gap: 8px;
+
         svg {
             @include adaptiv-phone-value('width', 16, 14, 1);
             @include adaptiv-phone-value('height', 16, 14, 1);
@@ -2401,6 +2418,7 @@ $black: #192636;
         margin-left: auto;
         margin-right: auto;
     }
+
     .product-view-swiper-slide__box {
         max-width: 100%;
         width: 100%;
@@ -2408,7 +2426,21 @@ $black: #192636;
     }
 }
 
-@media (max-width: 1400px) {
+@media (max-width: 1440px) {
+    .product-content {
+        margin-left: 80px;
+        margin-right: 80px;
+    }
+    .product-info {
+        justify-content: unset;
+    }
+    .header {
+        padding-left: 80px;
+        padding-right: 80px;
+    }
+}
+
+@media (max-width: 1150px) {
     .product-info {
         gap: 20px;
     }
@@ -2419,6 +2451,14 @@ $black: #192636;
 
     .product-content {
         max-width: 50%;
+    }
+    .header {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .product-content {
+        margin-left: auto;
+        margin-right: auto;
     }
 }
 
@@ -2436,7 +2476,7 @@ $black: #192636;
         max-width: 100%;
     }
 
-   
+
     .product-content {
         margin-top: 0;
         max-height: unset;
@@ -2448,6 +2488,7 @@ $black: #192636;
     .product-view__images-img {
         @include adaptiv-phone-value('height', 890, 585, 1)
     }
+
     .product-view__images {
         margin-bottom: 15px;
     }
@@ -2461,10 +2502,12 @@ $black: #192636;
     .product-view-swiper .swiper-button-prev {
         top: 40%;
         left: 15px;
+        z-index: 9 !important;
     }
 
     .product-view-swiper .swiper-button-next {
         top: 40%;
+        z-index: 9 !important;
         right: 15px;
     }
 
@@ -2478,23 +2521,28 @@ $black: #192636;
         padding: 0 15px;
     }
 }
+
 @media (max-width: 600px) {
     .moonbird-advantages-table p {
         flex-direction: column;
         align-items: flex-start;
         gap: 5px;
     }
+
     .moonbird-advantages-table tr:first-child th:last-child {
         border-radius: 10px 10px 0px 0px;
     }
+
     .moonbird-advantages-table tr:last-child td:last-child {
         border-radius: 0 0 10px 10px;
     }
 }
+
 @media (max-width: 550px) {
     .message-btn {
         display: none;
     }
+
     // .product-view-swiper-slide__box {
     //    max-width: unset;
     //    width: 100%;
@@ -2502,19 +2550,22 @@ $black: #192636;
     .product-faq-item-get {
         flex-direction: column;
     }
+
     .product-faq-item-get__img {
         max-width: 100%;
         width: 100%;
         object-fit: cover;
     }
+
     .payment-popup {
         padding: 30px 15px;
     }
+
     .product-content-subscribe__list {
         left: 30px;
-    } 
+    }
+
     .product-content-subscribe__list::after {
         left: 215px;
     }
-}
-</style>
+}</style>

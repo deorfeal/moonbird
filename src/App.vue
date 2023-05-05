@@ -155,6 +155,7 @@ body {
     width: 16px;
     height: 16px;
     background-repeat: no-repeat;
+    background-size: contain;
     background-image: url(../public/images/close-icon.svg);
   }
   svg {
